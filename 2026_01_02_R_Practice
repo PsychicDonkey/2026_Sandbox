@@ -12,3 +12,29 @@ summary(mod.fit) [gives summary table for the variable]
 mod.fit2 <- lm(y3 ~ x3, data = anscombe)
 
 #EDA with the iris data
+
+summary(iris)
+head(iris, 20)
+head(iris$Sepal.Length) # will return the head of the Sepal.Length Column/Vector in the iris DataFrame/Table
+hist(iris$Petal.Length) # histogram
+
+#extracting a factor mean, not a grand mean (e.g. - for the Iris Setosa species)
+mean(iris$Sepal.Length[iris$Species == "setosa"]) ## the square [] brackets contain a statement that must be evaluated true for the row to be included in the function
+
+#introducing for loops: 
+for (i in 1:3) {        #i is the index, a:b is a vector with all integers from a to b inclusive
+print(i)
+}
+
+# using the unique() function for printing the mean lengths of each species of iris:
+
+for (i in unique(iris$Species)) {  #remembering that the column iris$Species is a factor (numerical) with labels (letters)
+print(mean(iris$Sepal.Length[iris$Species == i]))
+}
+
+##making the above function more generic with a custom function
+conditional.mean <- function(x,y) {
+  for (i in unique(y)) {
+    print(mean(x[i == y]))
+  }
+}
