@@ -1,0 +1,3 @@
+#practice for R
+# run a simple linear regression on the object ANSCOMBE | lm stands for simple linear model 
+mod.fit <- lm(y1 ~ x1, data=anscombe)
