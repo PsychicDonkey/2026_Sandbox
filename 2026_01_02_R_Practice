@@ -1,3 +1,14 @@
 #practice for R
-# run a simple linear regression on the object ANSCOMBE | lm stands for simple linear model 
+# run a simple linear regression on the object anscombe | lm() function stands for linear model 
 mod.fit <- lm(y1 ~ x1, data=anscombe)
+
+#ploting a chart with the plot() function
+plot(anscombex$1,anscombey$1)
+abline(mod.fit) #mod.fit is a variable and the assignment operator is <-
+summary(mod.fit) [gives summary table for the variable]
+
+#now trying with different variables from the anscombe dataset/object - y3 and x3
+
+mod.fit2 <- lm(y3 ~ x3, data = anscombe)
+
+#EDA with the iris data
