@@ -1,6 +1,43 @@
-#practice for R
+### --- ---- ---- ---- ###
+ | MISCELLANEOUS POINTS |
+### --- ---- ---- ---- ###
+
+# $ is an operator for pulling out a particular vector or part of a dataframe/dataset
+
+### --- ---- --- ###
+ | BASIC COMMANDS |
+### --- ---- --- ###
+
+install.packages(<package_name>)           #install an R package e.g. "gpairs" or "mediation" (install once)
+                                           #other packages: "devtools"
+install_github(<package_name>)             #with devtools: install from github
+library(<package_name>)                    #load the package (every time you use R)
+
+### --- --- ###
+ | MODELLING |
+### --- --- ###
+
 # run a simple linear regression on the object anscombe | lm() function stands for linear model 
 mod.fit <- lm(y1 ~ x1, data=anscombe)
+
+### --- ---- --- --- ###
+ | DATA VISUALISATION |
+### --- ---- --- --- ###
+
+hist(iris$Petal.Length)                                     #histogram
+boxplot(<dependent variable> ~ <independent variables>      #boxplot
+
+#plot commands
+
+
+##more plotting - plotting different species onto different types of bullets (pch)
+
+plot (iris$Sepal.Length, iris$Sepal.Width, pch = as.numeric(iris$Species), xlab = "Sepal Length", ylab = "Sepal Width")
+
+## plus a legend with the legend function and the concatenate command: c() which creates a vector
+
+legend("topright", pch = c(1,2,3), legend = c("setosa","versicolor","vriginica"))
+
 
 #ploting a chart with the plot() function
 plot(anscombex$1,anscombey$1)
@@ -38,3 +75,4 @@ conditional.mean <- function(x,y) {
     print(mean(x[i == y]))
   }
 }
+
