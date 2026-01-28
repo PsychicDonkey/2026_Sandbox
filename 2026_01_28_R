@@ -1,0 +1,13 @@
+# following exercises from STFS see https://github.com/mdedge/stfs
+
+## Answer to 3.1.a and 3.1.b
+# Initialise Variables
+  x <- anscombe$x1
+  y <- anscombe$y1
+  n <- length(x)
+  b <- (sum(x*y) - (1/n) * sum(x) * sum(y))/(sum(x**2) - (1/n) * (sum(x)**2))
+  a <- (sum(y) - b *sum(x))/n
+
+# verifying the results for a and b using the lm() function -- where the general arguments are response ~ predictors, i.e. y ~ x
+  mod.fit <- lm(y ~ x)          #mod.fit is the variable, and we have previously defined x and y to the anscombe dataset vectors
+  summary(mod.fit)
