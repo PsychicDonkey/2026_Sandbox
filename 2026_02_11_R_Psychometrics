@@ -6,12 +6,17 @@ operator_name <- c("A","B","C","D","E","F","G","H","I","J")                 #set
 aptitude_score_odd <- c(5,8,7,8,7,6,5,8,6,2)
 aptitude_score_even <- c(6,10,7,9,6,8,4,7,5,3)
 job_performance_score_y <- c(7,8,10,8,6,9,6,9,8,6)
-combined_apt_score_x = aptitude_score_odd + aptitude_score_even
+combined_apt_score_x_1 <- aptitude_score_odd + aptitude_score_even
+combined_apt_score_x_2 <- c(12,16,15,17,14,13,9,14,13,6)
 
 intro_to_psychometrics_df <- data.frame(                                      #sets up the table with dataframe function
   operator_name = operator_name 
   ,aptitude_score_odd = aptitude_score_odd
   ,aptitude_score_even = aptitude_score_even
+  ,combined_apt_score_x_1 = combined_apt_score_x_1
+  ,combined_apt_score_x_2 = combined_apt_score_x_2
+  ,product_x1_x2 = combined_apt_score_x_1 * combined_apt_score_x_1
+  ,job_performance_score_y = job_performance_score_y
   ,aptitude_score_product = aptitude_score_odd * aptitude_score_even
   ,product_of_x_y = combined_apt_score_x * job_performance_score_y 
 )
@@ -28,3 +33,10 @@ print(intro_to_psychometrics_df)
 
 regression_model <- lm(job_performance_score_y ~ combined_apt_score_x)      #running a regression on x and y
 summary(regression_model)
+
+## adding a new vector to the dataframe and 
+
+
+
+##rename a column
+names(intro_to_psychometrics_df)[names(intro_to_psychometrics_df) == "job_performance_score_y"] <- job_performance_score_y_t1
