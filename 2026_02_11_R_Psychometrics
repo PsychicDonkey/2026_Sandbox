@@ -1,0 +1,30 @@
+##                                            ##
+## Table 3.2 from from Intro to Psychometrics ##
+##                                            ##
+
+operator_name <- c("A","B","C","D","E","F","G","H","I","J")                 #sets up the column vectors with concatenate function c()
+aptitude_score_odd <- c(5,8,7,8,7,6,5,8,6,2)
+aptitude_score_even <- c(6,10,7,9,6,8,4,7,5,3)
+job_performance_score_y <- c(7,8,10,8,6,9,6,9,8,6)
+combined_apt_score_x = aptitude_score_odd + aptitude_score_even
+
+intro_to_psychometrics_df <- data.frame(                                      #sets up the table with dataframe function
+  operator_name = operator_name 
+  ,aptitude_score_odd = aptitude_score_odd
+  ,aptitude_score_even = aptitude_score_even
+  ,aptitude_score_product = aptitude_score_odd * aptitude_score_even
+  ,product_of_x_y = combined_apt_score_x * job_performance_score_y 
+)
+print(intro_to_psychometrics_df)
+
+## some statistics functions ##
+  sum(vector)
+  mean(vector)
+  median(vector)
+  var(vector)
+  range(vector)
+  sqrt(vector)
+  cor(vector1,vector2)
+
+regression_model <- lm(job_performance_score_y ~ combined_apt_score_x)      #running a regression on x and y
+summary(regression_model)
