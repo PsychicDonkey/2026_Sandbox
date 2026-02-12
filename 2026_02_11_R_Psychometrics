@@ -8,6 +8,7 @@ aptitude_score_even <- c(6,10,7,9,6,8,4,7,5,3)
 job_performance_score_y <- c(7,8,10,8,6,9,6,9,8,6)
 combined_apt_score_x_1 <- aptitude_score_odd + aptitude_score_even
 combined_apt_score_x_2 <- c(12,16,15,17,14,13,9,14,13,6)
+combined_apt_score_x_3 <- c(15,27,15,10,17,13,8,11,7,7)
 
 intro_to_psychometrics_df <- data.frame(                                      #sets up the table with dataframe function
   operator_name = operator_name 
