@@ -34,9 +34,17 @@ print(intro_to_psychometrics_df)
 regression_model <- lm(job_performance_score_y ~ combined_apt_score_x)      #running a regression on x and y
 summary(regression_model)
 
-## adding a new vector to the dataframe and 
-
-
-
 ##rename a column
 names(intro_to_psychometrics_df)[names(intro_to_psychometrics_df) == "job_performance_score_y"] <- job_performance_score_y_t1
+
+## calculate spearman-brown formula for corrected split-half reliability on odd and evens
+
+spearman_brown_cor = (2*cor(aptitude_score_odd,aptitude_score_even))/(1+cor(aptitude_score_odd,aptitude_score_even))
+print(spearman_brown_cor)
+
+n <- 10
+var_tot <- 12
+sum_pq <- 1.8
+
+kr20 <- (1/(n-1))*((var_tot-sum_pq)/var_tot)
+print(kr20)
